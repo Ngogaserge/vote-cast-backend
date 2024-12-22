@@ -12,7 +12,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:3000") // Enable cross-origin for frontend requests
+@CrossOrigin(origins = "https://main.d3tcucdtfyahvp.amplifyapp.com") // Enable cross-origin for frontend requests
 @RestController
 @RequestMapping("/api/users")
 public class UserController {

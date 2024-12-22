@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin(origins = "http://localhost:3000") // Enable cross-origin for frontend requests
+@CrossOrigin(origins = "https://main.d3tcucdtfyahvp.amplifyapp.com") // Enable cross-origin for frontend requests
 @RestController
 @RequestMapping("/api/admin")
 public class AdminUserController {
