@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Voting App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .hero {
+      background-color: #007bff;
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.25rem;
+    }
+    .container {
+      margin-top: 30px;
+      flex: 1;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+    .footer {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Online Voting App</a>
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <form th:action="@{/logout}" method="post" style="display:inline;">
+          <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> <!-- CSRF token -->
+          <button type="submit" class="btn btn-link nav-link">Logout</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Welcome to the Online Voting App!</h1>
+  <p>Your voice matters. Make it count.</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h5>Your Profile</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Name:</strong> Ngoga Serge</p>
+          <p><strong>Email:</strong> sergengoga05@gmail.com</p>
+          <p><strong>Role:</strong> Voter</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h5>Available Elections</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Presidential Election
+              <a href="/vote/presidential" class="btn btn-primary btn-sm">Vote Now</a>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Local Council Election
+              <a href="/vote/local-council" class="btn btn-primary btn-sm">Vote Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h5>Voting History</h5>
+        </div>
+        <div class="card-body">
+          <p>You have voted in the following elections:</p>
+          <ul>
+            <li>Presidential Election - November 2024</li>
+            <li>Local Council Election - November 2024</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <span>&copy; 2024 Online Voting App. All Rights Reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
