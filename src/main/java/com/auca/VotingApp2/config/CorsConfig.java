@@ -13,12 +13,15 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")// Allow all endpoints
-                        .allowedOrigins("http://localhost:3000","https://main.d3tcucdtfyahvp.amplifyapp.com/","vote-cast-backend-production.up.railway.app") // Frontend URL
-
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allowed HTTP methods
-                        .allowedHeaders("*") // Allow all headers
-                        .allowCredentials(true); // Allow cookies or authorization headers
+                registry.addMapping("/**")
+                        .allowedOrigins(
+                                "http://localhost:3000",
+                                "https://main.d3tcucdtfyahvp.amplifyapp.com",
+                                "https://vote-cast-backend-production.up.railway.app"
+                        )
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedHeaders("*")
+                        .allowCredentials(true);
             }
         };
     }
