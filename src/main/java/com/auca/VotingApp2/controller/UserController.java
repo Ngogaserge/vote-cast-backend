@@ -29,7 +29,7 @@ public class UserController {
     // Register a new user
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody User user) {
-        user.setRole(Role.ROLE_ADMIN);
+        user.setRole(Role.ROLE_USER);
         userService.registerUser(user);
         return ResponseEntity.ok("Registration successful!");
     }
