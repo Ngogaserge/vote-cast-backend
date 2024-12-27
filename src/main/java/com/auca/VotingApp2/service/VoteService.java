@@ -7,7 +7,9 @@ import com.auca.VotingApp2.model.Candidate;
 import com.auca.VotingApp2.repository.CandidateRepository;
 import com.auca.VotingApp2.repository.VoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 import java.util.Optional;
